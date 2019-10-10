@@ -1,0 +1,232 @@
+（1）SW1的配置
+system-view
+  SYSN SW1
+  vlan batch 10 20 30 40 50 255
+int g0/0/10
+  port link-type access
+  port default vlan 10
+  q
+ int g0/0/20
+  port link-type a
+  port default vlan 20
+quit
+  int g0/0/11
+  port link-type a
+ port default vlan 30
+  int g0/0/12
+  port link-type a
+ port default vlan 30
+  int g0/0/13
+  port link-type access
+  port default vlan 30
+quit
+int g0/0/14
+  port link-type access
+  port default vlan 40
+quit
+  int g0/0/15
+  port link-type a
+  port default vlan 50
+  quit
+int g0/0/21
+port link-type access
+  port default vlan 255
+  quit
+  int g0/0/22
+  port link-type access
+  port default vlan 255
+  quit
+
+（2）SW2的配置
+system-view
+  SYSN SW2
+  vlan batch 10 20 30 40 50 255
+int g0/0/10
+  port link-type access
+  port default vlan 10
+  q
+ int g0/0/20
+  port link-type a
+  port default vlan 20
+quit
+  int g0/0/11
+  port link-type a
+ port default vlan 30
+  int g0/0/12
+  port link-type a
+ port default vlan 30
+  int g0/0/13
+  port link-type access
+  port default vlan 30
+quit
+int g0/0/14
+  port link-type access
+  port default vlan 40
+quit
+  int g0/0/15
+  port link-type a
+  port default vlan 50
+  quit
+int g0/0/21
+port link-type access
+  port default vlan 255
+  quit
+  int g0/0/22
+  port link-type access
+  port default vlan 255
+  quit
+
+（3）SW3的配置
+system-view
+  SYSN SW3
+  vlan batch 10 20 30 40 50 255
+int e0/0/10
+  port link-type access
+  port default vlan 10
+  q
+ int e0/0/20
+  port link-type a
+  port default vlan 20
+quit
+  int e0/0/11
+  port link-type a
+ port default vlan 30
+  int e0/0/12
+  port link-type a
+ port default vlan 30
+  int e0/0/13
+  port link-type access
+  port default vlan 30
+quit
+int e0/0/14
+  port link-type access
+  port default vlan 40
+quit
+  int e0/0/15
+  port link-type a
+  port default vlan 50
+  quit
+int e0/0/21
+port link-type access
+  port default vlan 255
+  quit
+  int e0/0/22
+  port link-type access
+  port default vlan 255
+  quit
+
+（4）SW4的配置
+system-view
+  SYSN SW4
+  vlan batch 10 20 30 40 50 255
+int e0/0/10
+  port link-type access
+  port default vlan 10
+  q
+ int e0/0/20
+  port link-type a
+  port default vlan 20
+quit
+  int e0/0/11
+  port link-type a
+ port default vlan 30
+  int e0/0/12
+  port link-type a
+ port default vlan 30
+  int e0/0/13
+  port link-type access
+  port default vlan 30
+quit
+int e0/0/14
+  port link-type access
+  port default vlan 40
+quit
+  int e0/0/15
+  port link-type a
+  port default vlan 50
+  quit
+int e0/0/21
+port link-type access
+  port default vlan 255
+  quit
+  int e0/0/22
+  port link-type access
+  port default vlan 255
+  quit
+
+==============第2小题==============
+（1）SW1的配置
+sys
+interface Eth-Trunk 1
+  mode lacp-static
+  trunkport g0/0/1
+  trunkport g0/0/2
+  trunkport g0/0/3
+  q
+（2）SW2的配置
+sys
+lacp priority 0
+interface Eth-Trunk 1
+  mode lacp-static
+  trunkport g0/0/1
+  trunkport g0/0/2
+  trunkport g0/0/3
+  max active-linknumber 2
+  lacp preempt enable
+  lacp preempt delay 10
+  quit
+int g0/0/1
+  lacp priority 50000
+  q
+========第3小题========
+（1）SW1和SW2的配置
+ int eth 1
+  port link-type trunk
+  port trunk allow vlan all
+  undo port trunk allow vlan 1
+  q
+ int g0/0/4
+  port link-type trunk
+  port trunk allow vlan all
+  undo port trunk allow vlan 1
+  q
+int g0/0/5
+  port link-type trunk
+  port trunk allow vlan all
+  undo port trunk allow vlan 1
+  q
+（2）SW3和SW4的配置
+int e0/0/1
+  port link-type trunk
+  port trunk allow vlan all
+  undo port trunk allow vlan 1
+  q
+int e0/0/2
+  port link-type trunk
+  port trunk allow vlan all
+  undo port trunk allow vlan 1
+  q
+
+========第4小题========
+（1）在SW1、SW2、SW3上分别创建MSTP实例
+stp region-configuration
+  region-name HW
+  revision-level 1
+  instance 1 vlan 10 20 30
+  instance 2 vlan 40 50 255
+  active region-configuration
+  quit
+（2）SW1作为实例1的根，实例2的备用根
+  stp instance 1 root primary
+  stp instance 2 root secondary
+（3）SW2作为实例2的根，实例1的备用根
+  stp instance 2 root primary
+  stp instance 1 root secondary
+（4）SW1启用STP防护
+  stp bpdu-protection
+  interface g0/0/6
+  stp edged-port enable
+  quit
+
+
+
