@@ -1,3 +1,5 @@
 1.Telnet
 2.广播风暴 dns 网关
-3.VLAN STP
+3.STP & vlan
+4.
+5.静态路由/动态RIP路由协议配置
