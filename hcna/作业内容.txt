@@ -1,5 +1,6 @@
 1.Telnet
 2.广播风暴 dns 网关
 3.STP & vlan
-4.
+4.拓扑图整理
 5.静态路由/动态RIP路由协议配置
+6.RIPv1和RIPv2对比
