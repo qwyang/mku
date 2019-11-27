@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.2.00.350">
+    <devices>
+        <dev id="FDF806CC-0194-4d8c-8BDC-4E76A30498A6" name="PC2" model="PC" settings=" -simpc_hostname pc2  -simpc_ip 10.1.1.2  -simpc_mask 255.255.255.0  -simpc_gateway 0.0.0.0  -simpc_mac 54-89-98-C7-6D-8D  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0 " system_mac="54-89-98-C7-6D-8D" com_port="0" bootmode="0" cx="465.000000" cy="201.000000" edit_left="492" edit_top="255">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="281C1191-ABDB-45ed-91AB-7119B12C38F6" name="PC1" model="PC" settings=" -simpc_hostname pc1  -simpc_ip 10.1.1.1  -simpc_mask 255.255.255.0  -simpc_gateway 0.0.0.0  -simpc_mac 54-89-98-4E-67-0E  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0 " system_mac="54-89-98-4E-67-0E" com_port="0" bootmode="0" cx="176.000000" cy="199.000000" edit_left="203" edit_top="253">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="BA806F21-8BA9-4d9b-800D-0D05E66490B1" name="SW2" model="S3700" settings="" system_mac="4C-1F-CC-C4-7C-00" com_port="2001" bootmode="0" cx="461.000000" cy="62.000000" edit_left="488" edit_top="46">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="59070F19-F866-47d7-9550-220887EB0774" name="SW1" model="S3700" settings="" system_mac="4C-1F-CC-7F-16-04" com_port="2000" bootmode="0" cx="194.000000" cy="61.000000" edit_left="218" edit_top="48">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="59070F19-F866-47d7-9550-220887EB0774" destDeviceID="BA806F21-8BA9-4d9b-800D-0D05E66490B1">
+            <interfacePair lineName="Copper" srcIndex="22" srcBoundRectIsMoved="1" srcBoundRect_X="264.183472" srcBoundRect_Y="88.161736" srcOffset_X="-13.000000" srcOffset_Y="-28.000000" tarIndex="22" tarBoundRectIsMoved="1" tarBoundRect_X="444.816528" tarBoundRect_Y="88.838264" tarOffset_X="-24.000000" tarOffset_Y="-31.000000" />
+            <interfacePair lineName="Copper" srcIndex="23" srcBoundRectIsMoved="1" srcBoundRect_X="276.183472" srcBoundRect_Y="76.161736" srcOffset_X="-23.000000" srcOffset_Y="17.000000" tarIndex="23" tarBoundRectIsMoved="1" tarBoundRect_X="456.816528" tarBoundRect_Y="76.838264" tarOffset_X="-39.000000" tarOffset_Y="19.000000" />
+        </line>
+        <line srcDeviceID="59070F19-F866-47d7-9550-220887EB0774" destDeviceID="281C1191-ABDB-45ed-91AB-7119B12C38F6">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="215.414642" srcBoundRect_Y="130.821045" srcOffset_X="8.000000" srcOffset_Y="-13.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="208.585358" tarBoundRect_Y="183.178955" tarOffset_X="6.000000" tarOffset_Y="3.000000" />
+        </line>
+        <line srcDeviceID="BA806F21-8BA9-4d9b-800D-0D05E66490B1" destDeviceID="FDF806CC-0194-4d8c-8BDC-4E76A30498A6">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="489.242188" srcBoundRect_Y="132.165894" srcOffset_X="2.000000" srcOffset_Y="-15.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="490.757813" tarBoundRect_Y="184.834106" tarOffset_X="6.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="167" top="268" right="254" bottom="285" content="10.1.1.1/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="444" top="270" right="531" bottom="287" content="10.1.1.2/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

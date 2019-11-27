@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.2.00.350">
+    <devices>
+        <dev id="D1D25FC5-827B-4a36-B347-25880967A269" name="SW2" model="S5700" settings="" system_mac="4C-1F-CC-3F-1C-AE" com_port="2001" bootmode="0" cx="396.000000" cy="67.000000" edit_left="421" edit_top="55">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="2CBB6C00-B0D2-4e3d-A326-908300B49984" name="PC1" model="PC" settings=" -simpc_ip 0.0.0.0  -simpc_mask 0.0.0.0  -simpc_gateway 0.0.0.0  -simpc_mac 54-89-98-77-0E-A7  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0 " system_mac="54-89-98-77-0E-A7" com_port="0" bootmode="0" cx="148.000000" cy="183.000000" edit_left="175" edit_top="237">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="36B2033B-8BC8-4155-952F-B7962EF7A2F2" name="PC2" model="PC" settings=" -simpc_ip 0.0.0.0  -simpc_mask 0.0.0.0  -simpc_gateway 0.0.0.0  -simpc_mac 54-89-98-F0-54-62  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0 " system_mac="54-89-98-F0-54-62" com_port="0" bootmode="0" cx="413.000000" cy="186.000000" edit_left="440" edit_top="240">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="F01CF261-A66A-4312-90DB-777F828AA9F0" name="SW1" model="S5700" settings="" system_mac="4C-1F-CC-76-07-1F" com_port="2000" bootmode="0" cx="182.000000" cy="67.000000" edit_left="208" edit_top="55">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="F01CF261-A66A-4312-90DB-777F828AA9F0" destDeviceID="D1D25FC5-827B-4a36-B347-25880967A269">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="252.183762" srcBoundRect_Y="94.000000" srcOffset_X="-17.000000" srcOffset_Y="-25.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="379.816223" tarBoundRect_Y="94.000000" tarOffset_X="-31.000000" tarOffset_Y="-23.000000" />
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="260.183777" srcBoundRect_Y="102.000000" srcOffset_X="-24.000000" srcOffset_Y="-15.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="387.816223" tarBoundRect_Y="102.000000" tarOffset_X="-38.000000" tarOffset_Y="-14.000000" />
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="1" srcBoundRect_X="244.183762" srcBoundRect_Y="86.000000" srcOffset_X="-7.000000" srcOffset_Y="20.000000" tarIndex="2" tarBoundRectIsMoved="1" tarBoundRect_X="371.816223" tarBoundRect_Y="86.000000" tarOffset_X="-22.000000" tarOffset_Y="19.000000" />
+        </line>
+        <line srcDeviceID="F01CF261-A66A-4312-90DB-777F828AA9F0" destDeviceID="2CBB6C00-B0D2-4e3d-A326-908300B49984">
+            <interfacePair lineName="Copper" srcIndex="3" srcBoundRectIsMoved="1" srcBoundRect_X="196.853683" srcBoundRect_Y="135.440369" srcOffset_X="6.000000" srcOffset_Y="-15.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="187.146317" tarBoundRect_Y="168.559631" tarOffset_X="5.000000" tarOffset_Y="3.000000" />
+        </line>
+        <line srcDeviceID="D1D25FC5-827B-4a36-B347-25880967A269" destDeviceID="36B2033B-8BC8-4155-952F-B7962EF7A2F2">
+            <interfacePair lineName="Copper" srcIndex="3" srcBoundRectIsMoved="1" srcBoundRect_X="429.107117" srcBoundRect_Y="136.749741" srcOffset_X="1.000000" srcOffset_Y="-18.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="433.892883" tarBoundRect_Y="170.250259" tarOffset_X="-78.000000" tarOffset_Y="4.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips />
+</topo>

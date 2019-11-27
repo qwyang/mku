@@ -1,0 +1,14 @@
+undo ter mo
+sys
+sysn R2-zhangsan
+dhcp enable
+int g0/0/0
+ip add 12.1.1.2 30
+q
+int g0/0/1
+ip add 192.168.1.254 24
+dhcp select relay
+dhcp relay server-ip 12.1.1.1 
+q
+
+
